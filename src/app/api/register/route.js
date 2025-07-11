@@ -24,7 +24,7 @@ export const POST = async (req) => {
         });
         await newUser.save();
 
-        return new Response(JSON.stringify(newUser), {
+        return new Response(newUser, {
             status: 201,
             headers: { 'Content-Type': 'application/json' }
         });
