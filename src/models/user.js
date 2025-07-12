@@ -27,10 +27,20 @@ const AdminSchema = new mongoose.Schema(
             required: true
         },
 
-        isAdmin: {
+        isUserType: {
+            type: String,
+            enum: ['admin', 'user'],
+            default: 'user',
+            required: true,
+        },
+        isVerified: {
             type: Boolean,
             default: false,
         },
+        verificationToken: {
+            type: String,
+        },
+        
     },
     { timestamps: true }
 );
